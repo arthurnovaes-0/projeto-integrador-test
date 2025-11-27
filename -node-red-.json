@@ -1,0 +1,304 @@
+[
+    {
+        "id": "43ffb342e3ff7089",
+        "type": "tab",
+        "label": "Fluxo 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9106d82841228ecd",
+        "type": "firebase.on",
+        "z": "43ffb342e3ff7089",
+        "name": "Temperatura",
+        "firebaseconfig": "",
+        "childpath": "",
+        "atStart": true,
+        "eventType": "value",
+        "queries": [],
+        "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "76b9270cd00c8de1",
+                "0f46c26dd799cf77"
+            ]
+        ]
+    },
+    {
+        "id": "76b9270cd00c8de1",
+        "type": "debug",
+        "z": "43ffb342e3ff7089",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "0f46c26dd799cf77",
+        "type": "function",
+        "z": "43ffb342e3ff7089",
+        "name": "temperatura",
+        "func": "msg.payload = msg.payload.motor.temperatura;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 320,
+        "wires": [
+            [
+                "1c9deaabd51b4f0d"
+            ]
+        ]
+    },
+    {
+        "id": "1c9deaabd51b4f0d",
+        "type": "ui_gauge",
+        "z": "43ffb342e3ff7089",
+        "name": "",
+        "group": "e69ca5f2f3a21153",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Gráfico",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 540,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "3be7d8fad8168c80",
+        "type": "firebase.on",
+        "z": "43ffb342e3ff7089",
+        "name": "Corrente",
+        "firebaseconfig": "",
+        "childpath": "",
+        "atStart": true,
+        "eventType": "value",
+        "queries": [],
+        "x": 120,
+        "y": 460,
+        "wires": [
+            [
+                "6599b9462535028a",
+                "d4f5ed5726494794"
+            ]
+        ]
+    },
+    {
+        "id": "6599b9462535028a",
+        "type": "debug",
+        "z": "43ffb342e3ff7089",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "d4f5ed5726494794",
+        "type": "function",
+        "z": "43ffb342e3ff7089",
+        "name": "corrente",
+        "func": "msg.payload = msg.payload.motor.corrente;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 540,
+        "wires": [
+            [
+                "9bf8fb88bfdc4f31"
+            ]
+        ]
+    },
+    {
+        "id": "9883eaaba6e1bd4b",
+        "type": "firebase.on",
+        "z": "43ffb342e3ff7089",
+        "name": "Vibração",
+        "firebaseconfig": "",
+        "childpath": "",
+        "atStart": true,
+        "eventType": "value",
+        "queries": [],
+        "x": 760,
+        "y": 240,
+        "wires": [
+            [
+                "6748b57f33a8a45d",
+                "a263deaa5602b0a6"
+            ]
+        ]
+    },
+    {
+        "id": "6748b57f33a8a45d",
+        "type": "debug",
+        "z": "43ffb342e3ff7089",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "a263deaa5602b0a6",
+        "type": "function",
+        "z": "43ffb342e3ff7089",
+        "name": "vibracao",
+        "func": "msg.payload = msg.payload.motor.vibracao;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 320,
+        "wires": [
+            [
+                "db6416905d8bdb40"
+            ]
+        ]
+    },
+    {
+        "id": "db6416905d8bdb40",
+        "type": "ui_chart",
+        "z": "43ffb342e3ff7089",
+        "name": "",
+        "group": "e69ca5f2f3a21153",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Gráfico",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-2",
+        "ymax": "+2",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1140,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9bf8fb88bfdc4f31",
+        "type": "ui_gauge",
+        "z": "43ffb342e3ff7089",
+        "name": "",
+        "group": "e69ca5f2f3a21153",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Gráfico",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 540,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "e69ca5f2f3a21153",
+        "type": "ui_group",
+        "name": "motor",
+        "tab": "0377c37f66cdf622",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "0377c37f66cdf622",
+        "type": "ui_tab",
+        "name": "motor",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "22db06575df75277",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-firebase": "1.1.1",
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
